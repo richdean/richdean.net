@@ -21,7 +21,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="<%- config.description %>">
-        <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.feed %>">
+        <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- config.feed.path %>">
         <%- autoCanonical(config, page) %>
         <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
         <meta name="author" content="Rich Dean">
@@ -55,7 +55,7 @@
         <% } else { %>
           <meta name="twitter:title" content="<%= config.title %>" />
         <% } %>
-        <meta name="twitter:description" content="" />
+        <meta name="twitter:description" content="Web Developer" />
         <meta name="twitter:image" content="/assets/images/rich.jpg" />
 
         <link rel="stylesheet" type="text/css" href="<%- config.root %>styles/styles.css">
