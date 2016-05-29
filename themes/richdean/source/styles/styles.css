@@ -202,8 +202,9 @@ header h1 a:hover {
 }
 .subtitle {
 	color: #ccc;
-	font-size: 1.2em;
-	margin: 0 0 1.2em;
+	font-size: 1.1em;
+	margin: 0 auto 1.2em;
+	max-width: 500px;
 }
 header nav {
 	margin-top: 1em;
@@ -382,6 +383,9 @@ header {
 	}
 	ul, ol {
 		margin-left: 2em;
+	}
+	#wrapper {
+		padding: 10px 10px 0;
 	}
 }
 

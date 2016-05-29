@@ -25,7 +25,11 @@
         <%- autoCanonical(config, page) %>
         <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
         <meta name="author" content="Rich Dean">
-        <meta name="description" content="">
+        <% if (title) { %>
+          <meta name="description" content="<%= truncate(strip_html(page.content), {length: 200, separator: ' '}) %>">
+        <% } else { %>
+          <meta name="description" content="<%= config.description %>">
+        <% } %>
 
         <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
@@ -50,12 +54,13 @@
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@_richdean" />
-        <% if (typeof page.title == 'undefined') { %>
+        <% if (title) { %>
           <meta name="twitter:title" content="<%= title %>" />
+          <meta name="twitter:description" content="<%= truncate(strip_html(page.content), {length: 200, separator: ' '}) %>" />
         <% } else { %>
           <meta name="twitter:title" content="<%= config.title %>" />
+          <meta name="twitter:description" content="<%= config.description %>" />
         <% } %>
-        <meta name="twitter:description" content="Web Developer" />
         <meta name="twitter:image" content="<%- config.url %>/assets/images/rich.jpg" />
 
         <link rel="stylesheet" type="text/css" href="<%- config.root %>styles/styles.css">
